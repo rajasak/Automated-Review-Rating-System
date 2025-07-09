@@ -1,1 +1,4 @@
-Install pandas numpy matplotlib seaborn scikit-learn
+numpy 
+matplotlib
+seaborn 
+scikit-learn
