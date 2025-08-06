@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automated Review System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            font-size: 16px;
+            padding: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        .success { color: green; }
+        .info { color: orange; }
+    </style>
+</head>
+<body>
+    <h1>📝 AUTOMATED REVIEW SYSTEM</h1>
+    <p>This app compares predictions from two models: Balanced and Imbalanced.</p>
+
+    <form method="post">
+        <label for="review">✍️ Enter a product review:</label><br>
+        <textarea name="review" required>{{ review or '' }}</textarea><br><br>
+        <input type="submit" value="🔍 Predict">
+    </form>
+
+    {% if prediction_A is not none and prediction_B is not none %}
+        <div class="result">
+            <h3>✅ Model Predictions</h3>
+            <p><strong>Balanced Model:</strong> {{ prediction_A }}</p>
+            <p><strong>Imbalanced Model:</strong> {{ prediction_B }}</p>
+
+            {% if agreement %}
+                <p class="success">✅ Both models agree on the prediction.</p>
+            {% else %}
+                <p class="info">ℹ️ The models gave <strong>different</strong> predictions.</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <hr>
+    <small>Built with Flask</small>
+</body>
+</html>
