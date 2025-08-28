@@ -12,3 +12,4 @@ Torch
 react
 django
 nltk
+rest framework
