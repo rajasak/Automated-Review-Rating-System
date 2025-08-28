@@ -13,3 +13,4 @@ react
 django
 nltk
 rest framework
+re
