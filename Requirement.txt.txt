@@ -9,3 +9,5 @@ requests
 Tensorflow
 Transformers
 Torch
+react
+django
