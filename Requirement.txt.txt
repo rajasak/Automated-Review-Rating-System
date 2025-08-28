@@ -11,3 +11,4 @@ Transformers
 Torch
 react
 django
+nltk
